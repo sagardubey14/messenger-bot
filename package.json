@@ -1,0 +1,19 @@
+{
+  "name": "messenger-bot",
+  "version": "1.0.0",
+  "description": "This project is a proof-of-concept (POC) full-stack bot built using Node.js, the Meta Graph API, and ngrok, designed to receive and automatically respond to messages sent to a Facebook Page via Messenger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ngrok/ngrok": "^1.5.1",
+    "axios": "^1.9.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
