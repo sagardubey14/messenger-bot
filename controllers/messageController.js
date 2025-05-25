@@ -1,3 +1,5 @@
+const { sendTextMessage } = require("../services/messengerService");
+
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN; // our secret token to check requests
 
 exports.verifyWebhook = (req, res) => {
@@ -13,5 +15,18 @@ exports.verifyWebhook = (req, res) => {
   } else {
     console.log('WEBHOOK_VERIFICATION_FAILED'); // wrong token or something
     res.sendStatus(403); // not allowed
+  }
+};
+
+
+exports.sendTestMessage = async (req, res) => {
+  const testPSID = process.env.PSID; // hard-coded PSID for sending texts
+  try {
+    
+    await sendTextMessage(testPSID, 'Hello from my bot');
+    res.status(200).send('Message sent');
+  } catch (err) {
+    console.error('Failed to send test message:', err.message);
+    res.sendStatus(500);
   }
 };
